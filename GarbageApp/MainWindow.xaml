@@ -1,0 +1,38 @@
+﻿<Window x:Class="GarbageApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:msagl="clr-namespace:Microsoft.Msagl.WpfGraphControl;assembly=Microsoft.Msagl.WpfGraphControl"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:GarbageApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="MainGrid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="vertText" Width="100" Height="20" PreviewTextInput="TextBoxPreview"  AcceptsReturn="True"  Grid.Column="0" Grid.Row="0" />
+        <Button Name="vertBtn" Click="OnOkClick" Content="Input num of vertices" Height="50" Grid.Row="1" Width="150"/>
+        <msagl:AutomaticGraphLayoutControl
+    x:Name="GraphViewerControl" Grid.RowSpan="3"
+    Grid.Row="2"
+    Grid.Column="1" Grid.ColumnSpan="2"
+    Margin="5"/>
+
+    </Grid>
+</Window>
